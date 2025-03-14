@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Blogs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-center p-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-center">
+        {% for blog in blogs %}
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <a href="{{ blog.link }}" target="_blank">
+                <img class="w-full h-auto object-cover" src="{{ blog.image }}" alt="{{ blog.title }}">
+                <div class="p-4">
+                    <h5 class="text-lg font-semibold">{{ blog.title }}</h5>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
